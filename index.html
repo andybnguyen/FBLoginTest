@@ -80,6 +80,11 @@
       FB.api('/me', function (response) {
         console.log('Response Obj:');
         console.log(response);
+
+        FB.api(`/${response.id}`, function(resp) {
+          console.log(resp)
+        });
+
         document.getElementById('status').innerHTML =
           'Thanks for logging in, ' + response.name + '!';
       });
